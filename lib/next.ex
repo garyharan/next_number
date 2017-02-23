@@ -1,3 +1,5 @@
+require IEx
+
 defmodule Next do
   import Integer, only: [digits: 1, undigits: 1]
   import Enum, only: [reverse: 1]
@@ -8,12 +10,12 @@ defmodule Next do
     #   return it
     # else
     #   return -1
-    swapped = recollate(swap(pieces(number)))
-    if swapped > number do
+    swapped = recollate(reverse(pieces(number)))
+    # if swapped > number do
       swapped
-    else
-      -1
-    end
+    # else
+    #   -1
+    # end
   end
 
   def pieces(number) do
@@ -24,7 +26,10 @@ defmodule Next do
     undigits(digits)
   end
 
-  def swap(array) do
-    reverse(array)
+  def swap(array, origin_index, target_index) do
+    reversed = reverse(array)
+    origin = Enum.at(reversed, origin_index)
+    reversed = List.replace_at(reversed, origin_index, Enum.at(reversed, target_index))
+    reverse(List.replace_at(reversed, target_index, origin))
   end
 end
