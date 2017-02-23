@@ -26,4 +26,13 @@ defmodule NextTest do
     assert swap([1, 2, 3, 4, 5], 0, 1) == [1, 2, 3, 5, 4]
     assert swap([1, 2, 3, 4, 5], 1, 4) == [4, 2, 3, 1, 5]
   end
+
+  describe "left_traverse/1" do
+    test "starting at digit 0" do
+      assert left_traverse([1, 2, 3]) == [
+       [1, 3, 2],
+       [3, 2, 1]
+      ]
+    end
+  end
 end

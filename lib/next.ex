@@ -18,6 +18,15 @@ defmodule Next do
     # end
   end
 
+
+  def left_traverse(digits) do
+    left_traverse(digits, 0)
+  end
+
+  def left_traverse(digits, index) do
+    # start with a swap using first digit as starting point
+  end
+
   def pieces(number) do
     digits(number)
   end
