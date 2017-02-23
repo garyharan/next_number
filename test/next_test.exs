@@ -8,7 +8,7 @@ defmodule NextTest do
     test "double digits vanilla paths" do
       assert calculate(12)   == 21
       assert calculate(19)   == 91
-      # assert calculate(513)  == 531
+      assert calculate(513)  == 531
       # assert calculate(2017) == 2071
     end
 
