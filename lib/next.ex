@@ -8,7 +8,12 @@ defmodule Next do
     #   return it
     # else
     #   return -1
-    recollate(swap(pieces(number)))
+    swapped = recollate(swap(pieces(number)))
+    if swapped > number do
+      swapped
+    else
+      -1
+    end
   end
 
   def pieces(number) do
